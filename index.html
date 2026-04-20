@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>She Care — Maternal Health Tracker</title>
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container-h">
+      <h1>She Care 💗 Maternal Health Tracker</h1>
+      <div class="subtitle">Monitor Glucose, Cortisol, Hemoglobin & Vital Signs</div>
+    </div>
+  </header>
+
+  <main class="main container-h">
+    <!-- Profile -->
+    <section class="card profile-card">
+      <h2>Profile</h2>
+      <div class="profile-row">
+        <label>Name <input id="profileName" type="text" placeholder="e.g. Thavamani"></label>
+        <label>Age <input id="profileAge" type="number" placeholder="e.g. 26"></label>
+        <label>Pregnancy Week <input id="profileWeek" type="number" placeholder="e.g. 26"></label>
+        <div class="profile-actions">
+          <button id="saveProfile" class="btn primary">Save</button>
+          <button id="clearProfile" class="btn">Clear</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Manual Entry -->
+    <section class="card entry-card">
+      <h2>Enter Vitals (Manual)</h2>
+      <div class="entry-grid">
+        <label>Glucose (mg/dL) <input id="inpGlucose" type="number" min="0"></label>
+        <label>Cortisol (µg/dL) <input id="inpCortisol" type="number" min="0"></label>
+        <label>Hemoglobin (g/dL) <input id="inpHb" type="number" min="0"></label>
+        <label>Heart Rate (bpm) <input id="inpHR" type="number" min="0"></label>
+        <label>Blood Pressure (mmHg) <input id="inpBP" type="number" min="0"></label>
+        <label>SpO₂ (%) <input id="inpSpO2" type="number" min="0" max="100"></label>
+        <label>Temperature (°C) <input id="inpTemp" step="0.1" type="number" min="30" max="45"></label>
+      </div>
+
+      <div class="entry-actions">
+        <button id="submitReading" class="btn primary">Submit</button>
+        <button id="presetNormal" class="btn">Preset Normal</button>
+        <button id="clearHistory" class="btn">Clear History</button>
+        <button id="exportCsv" class="btn">Export CSV</button>
+      </div>
+    </section>
+
+    <!-- Latest Readings -->
+    <section class="card latest-section">
+      <h2>Latest Readings</h2>
+      <div class="main-cards">
+        <div class="big-card" id="card-glucose">
+          <div class="big-label">Glucose</div>
+          <div class="big-value" id="val-glucose">--</div>
+          <div class="big-sub" id="stat-glucose">No Data</div>
+        </div>
+
+        <div class="big-card" id="card-cortisol">
+          <div class="big-label">Cortisol</div>
+          <div class="big-value" id="val-cortisol">--</div>
+          <div class="big-sub" id="stat-cortisol">No Data</div>
+        </div>
+
+        <div class="big-card" id="card-hb">
+          <div class="big-label">Hemoglobin</div>
+          <div class="big-value" id="val-hb">--</div>
+          <div class="big-sub" id="stat-hb">No Data</div>
+        </div>
+      </div>
+
+      <div class="small-cards" id="smallVitals"></div>
+    </section>
+
+    <!-- Chart -->
+    <section class="card chart-card">
+      <h2>History & Trends</h2>
+      <canvas id="trendChart" height="260"></canvas>
+      <div class="muted small">Shows Glucose (green), Cortisol (yellow) and Hemoglobin (red).</div>
+    </section>
+
+    <!-- History -->
+    <section class="card history-card">
+      <h2>History</h2>
+      <table class="history-table" id="historyTable">
+        <thead>
+          <tr><th>#</th><th>Time</th><th>Glucose</th><th>Cortisol</th><th>Hb</th><th>HR</th><th>BP</th><th>SpO₂</th><th>Temp</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container-h">💖 She Care — Maternal Health Kit</div>
+  </footer>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
+
