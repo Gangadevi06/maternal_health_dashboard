@@ -1,6 +1,8 @@
-# Maternal Health Monitoring Dashboard
+## Live Demo
+https://gangadevi06.github.io/maternal_health_dashboard/
 
-A web-based application designed to monitor maternal health vitals and assist in early risk detection using rule-based classification.
+# Maternal Health Monitoring Dashboard
+A web-based dashboard for monitoring maternal health vitals and enabling early risk detection using rule-based classification.
 
 ## Features
 - Manual input of health vitals (Glucose, Hemoglobin, Cortisol, Heart Rate, Blood Pressure)
@@ -30,5 +32,4 @@ This system simulates a maternal health monitoring solution where users can inpu
 ## Author
 Ganga Devi
 
-## Live Demo
-https://gangadevi06.github.io/maternal_health_dashboard/
+
